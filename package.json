@@ -1,7 +1,7 @@
 {
   "name": "chat-nav",
   "displayName": "Chat nav",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Extension for navigating through questions",
   "author": "yx1919@nyu.edu",
   "scripts": {
@@ -28,10 +28,6 @@
   "manifest": {
     "host_permissions": [
       "https://chatgpt.com/*"
-    ],
-    "permissions": [
-      "activeTab",
-      "tabs"
     ],
     "commands": {
       "_execute_action": {
