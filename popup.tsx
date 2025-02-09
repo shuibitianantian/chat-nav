@@ -8,7 +8,7 @@ import {
 } from "@arco-design/web-react"
 import enUS from "@arco-design/web-react/es/locale/en-US"
 import { IconLoading } from "@arco-design/web-react/icon"
-import { useEffect, useMemo, useState } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
 
 import { MessageType, type QuestionElement } from "~typing"
 
@@ -71,7 +71,7 @@ function IndexPopup() {
     <ConfigProvider locale={enUS}>
       <div
         style={{
-          padding: "0px 16px 8px 16px",
+          padding: "0px 16px 16px 16px",
           width: 500
         }}>
         <Typography.Title heading={4}>Questions</Typography.Title>
@@ -80,6 +80,7 @@ function IndexPopup() {
           value={search}
           onChange={setSearch}
           style={{ marginBottom: 18 }}
+          autoFocus
         />
         {isLoading && (
           <IconLoading
@@ -97,12 +98,11 @@ function IndexPopup() {
         ) : (
           <Space direction="vertical">
             {filteredElements.map((ele, idx) => (
-              <Space style={{ alignItems: "start" }}>
+              <Space style={{ alignItems: "start" }} key={ele.id}>
                 <Tag color="arcoblue" bordered>
                   No.{idx}
                 </Tag>
                 <Typography.Text
-                  key={ele.id}
                   ellipsis={{
                     rows: 3,
                     expandable: true,
@@ -119,7 +119,8 @@ function IndexPopup() {
                   style={{
                     cursor: "pointer",
                     margin: 0,
-                    color: ele.id === clicked ? "rgb(var(--arcoblue-6))" : ""
+                    color: ele.id === clicked ? "rgb(var(--arcoblue-6))" : "",
+                    wordBreak: "break-word"
                   }}>
                   {ele.text}
                 </Typography.Text>

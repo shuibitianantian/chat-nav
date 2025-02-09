@@ -5,8 +5,6 @@ export const config: PlasmoCSConfig = {
     matches: ["https://chatgpt.com/*"],
 }
 
-console.log("Content script 已加载");
-
 const ID_TAG = 'data-message-id';
 
 chrome.runtime.onMessage.addListener((request, _, sendResponse) => {
