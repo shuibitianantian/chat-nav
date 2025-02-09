@@ -1,0 +1,4 @@
+.customized-content:hover {
+  color: rgb(97, 97, 117);
+  transition: all 0.1s;
+}

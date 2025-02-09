@@ -10,6 +10,8 @@
     "package": "plasmo package"
   },
   "dependencies": {
+    "@arco-design/web-react": "^2.65.0",
+    "@plasmohq/messaging": "^0.6.2",
     "plasmo": "0.89.4",
     "react": "18.2.0",
     "react-dom": "18.2.0"
@@ -25,7 +27,11 @@
   },
   "manifest": {
     "host_permissions": [
-      "https://*/*"
+      "https://chatgpt.com/*"
+    ],
+    "permissions": [
+      "activeTab",
+      "tabs"
     ]
   }
 }
