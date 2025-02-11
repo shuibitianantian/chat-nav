@@ -1,7 +1,7 @@
 {
   "name": "chat-nav",
   "displayName": "Chat nav",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Extension for navigating through questions",
   "author": "yx1919@nyu.edu",
   "scripts": {

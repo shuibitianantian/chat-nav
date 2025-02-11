@@ -24,9 +24,7 @@ chrome.runtime.onMessage.addListener((request, _, sendResponse) => {
 chrome.runtime.onMessage.addListener((request, _, sendResponse) => {
     if (request.name === MessageType.SCROLL_TO_QUESTION) {
         const target = document.querySelector(`[${ID_TAG}="${request.id}"]`);
-        const container = document.querySelector('[class^=react-scroll-to-bottom] > [class^=react-scroll-to-bottom]');
-        const targetPosition = container.scrollTop + (target.getBoundingClientRect().top - container.getBoundingClientRect().top) - 60;
-        container?.scrollTo({ behavior: 'smooth', top: targetPosition });
+        target.scrollIntoView({ behavior: 'smooth' });
         sendResponse(true)
     }
 });
